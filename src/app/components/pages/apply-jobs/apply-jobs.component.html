@@ -1,0 +1,74 @@
+<app-preloader></app-preloader>
+<app-navbar></app-navbar>
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Apply Job</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Apply Job</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="create-account-area pt-100 pb-100">
+    <div class="container">
+       
+            <form [formGroup]="applyJobForm" (ngSubmit)="submitForm()">
+                <div class="create-information">
+                <h3>Apply Job</h3>
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Upload CV</label>
+                            <input type="file" formControlName="resume" class="form-control"(change)="getLogoUrl($event)">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" formControlName="fname" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text"formControlName="lname" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" formControlName="email" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Phone No</label>
+                            <input type="text" formControlName="phoneno" class="form-control" onKeyPress="if(this.value.length==10) return false;">
+                        </div>
+                    </div>
+                
+
+                </div>
+           
+        </div>
+        <div class="text-left">
+            <button type="submit" class="btn create-ac-btn">Save</button>
+        </div>
+    </form>
+    </div>
+</div>
+<app-footer></app-footer>

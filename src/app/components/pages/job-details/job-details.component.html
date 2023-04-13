@@ -1,0 +1,77 @@
+<app-preloader></app-preloader>
+<app-navbar></app-navbar>
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Job List</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Job List</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="job-area job-area-two pt-100">
+    <div class="container">
+        <div class="row">
+            <!-- {{users | json}} -->
+          
+             
+            <div class="col-md-6" *ngFor="let data of users.jobPostEntities | paginate:{id:'list_pagination',
+            itemsPerPage: 10,
+            currentPage : page,
+            totalItems:totalRecords
+
+          }">
+          <!-- {{data | json}} -->
+                <div class="job-item">
+                    <div class="row">
+                    <div class="col-md-2">
+                    <img src="{{imageUrl}}{{data.image}}" alt="Job" height="auto" width="120px">
+                </div>
+                <div class="col-md-10">
+                    <div class="job-inner">
+                        <div class="job-inner-left">
+                            <h3>{{(data.title | slice:0:10)+"..."}}</h3>
+                            <a routerLink="/company-details">{{data.email}}</a>
+                            <ul>
+                                <li><i class="icofont-money-bag"></i>{{(data.salaryOffer  | slice:0:10)+"..."}}</li>
+                                <li><i class="icofont-location-pin"></i> {{data.city}},{{data.country}}</li>
+                                <li><i class="icofont-external"></i> {{(data.experience | slice:0:10)+"..."}}</li>
+                                <li><i class="icofont-checked"></i>Skills- {{(data.skills | slice:0:10)+"..."}}</li>
+                                <li><i class="icofont-close"></i>DeadLine Date- {{data.deadlineDate}}</li>
+                                
+                                
+                            </ul>
+                        </div>
+
+                        <div class="job-inner-right">
+                            <ul>
+                                <li><a (click)="navigateForApplyJob(data.id)">Apply</a></li>
+                                <li><a [routerLink]="['/company-details',data.id]">View Profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="pagination-area" style="text-align:center">
+        <pagination-controls id="list_pagination"  (pageChange)="page = $event"></pagination-controls></div>
+    
+    
+</section>
+
+
+
+
+<app-footer></app-footer>

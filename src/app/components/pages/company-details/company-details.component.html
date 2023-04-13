@@ -1,0 +1,116 @@
+<app-preloader></app-preloader>
+<app-navbar></app-navbar>
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Company Details</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Company Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="company-details-area pt-100">
+    <div class="container">
+        <div class="row">
+        <!-- {{users | json}} -->
+            <div class="col-lg-8">
+                <div class="company-details-item">
+                    <div class="company-details-logo">
+                        <img src="{{imageUrl}}{{users.image}}" alt="Logo">
+
+                        <div class="company-logo-inner">
+                            
+                            <h5>{{users.companyName}}</h5>
+                           <h6>{{users.email}}</h6>
+                            <p><i class="icofont-location-pin"></i>{{users.city}}, {{users.country}}</p>
+                        </div>
+                    </div>
+                    <div class="company-details-share">
+                        <span>Job:</span>
+
+
+                        <ul>
+                            <li>{{users.title}}</li>
+                         </ul>
+                    </div>
+                    <div class="company-details-share">
+                       
+                        
+                        <span>Skills:</span>
+
+                        <ul>
+                            <li>{{users.skills}}</li>
+                
+                        </ul>
+                    </div>
+
+                    <div class="company-details-share">
+                        <span>Experience:</span>
+
+
+                        <ul>
+                            <li>{{users.experience}}</li> 
+                        </ul>
+                    </div>
+
+                    <div class="company-details-description">
+                        <h3>Description</h3>
+                        <p>{{users.descripition}}</p>
+                    </div>
+
+                    <div class="text-center">
+                        <a class="job-details-btn" [routerLink]="['/apply_jobs',users.id]">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="company-details-item">
+                    <div class="single-resume-category">
+                        <h3>Job Type</h3>
+
+                        <ul>
+                            <li>{{users.jobType}}</li>
+                            
+                        </ul>
+                        <br>
+                        <h3>Salary Offer</h3>
+
+                        <ul>
+                            <li>{{users.salaryOffer}}</li>
+                            
+                        </ul>
+                        <br>
+                        <h3>Applied Till</h3>
+
+                        <ul>
+                            <li>{{users.deadlineDate}}</li>
+                            
+                        </ul>
+                    </div>
+<!-- 
+                    <div class="single-resume-category single-resume-types">
+                        <h3>Job Locations</h3>
+
+                        <ul>
+                            <li><a href="#">New York</a><span>(4)</span></li>
+                            <li><a href="#">Washington</a><span>(5)</span></li>
+                            <li><a routerLink="/">Chicago</a><span>(3)</span></li>
+                            <li><a routerLink="/">Houston</a><span>(1)</span></li>
+                            <li><a routerLink="/">Los Angeles</a><span>(0)</span></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

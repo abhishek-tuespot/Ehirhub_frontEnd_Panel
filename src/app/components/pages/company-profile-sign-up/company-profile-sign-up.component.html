@@ -1,0 +1,164 @@
+<app-preloader></app-preloader>
+<app-navbar></app-navbar>
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Create Account</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Create Account</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="create-account-area pt-100 pb-100">
+    <div class="container">
+        <div class="create-photo">
+            <div class="already-create">
+                <span>Already create an account?</span>
+                <a routerLink="/login">Sign In</a>
+            </div>
+
+           
+        </div>
+        <form  [formGroup]="companyForm">
+
+        <div class="create-information">
+           
+                <h3>Company Information</h3>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Company Logo</label>
+                            <input type="file" formControlName="companyLogo" class="form-control"(change)="getLogoUrl($event)">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text"formControlName="companyName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Company Email</label>
+                            <input type="text"formControlName="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Owner Name</label>
+                            <input type="text"formControlName="ownerName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Contact No.</label>
+                            <input type="text"  formControlName="contactNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Industry</label>
+                            <input type="text"formControlName="industry" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" formControlName="city"class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text"formControlName="state" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text"formControlName="country" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>About Company</label>
+                            <textarea id="your_message" class="form-control" rows="8"></textarea>
+                        </div>
+                    </div> -->
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Website Link</label>
+                            <input type="text"formControlName="website" class="form-control">
+                        </div>
+                    </div>
+                  
+
+                </div>
+            
+        </div>
+
+
+        <div class="create-skills">
+            <div class="create-skills-wrap">
+                <div class="create-skills-left">
+                    <h3>Create Username and Password</h3>
+                </div>
+            </div>
+
+        
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text"formControlName="username" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text"formControlName="password" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Linkedin</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div> -->
+                </div>
+         
+        </div>
+    </form>
+        <div class="text-left">
+       
+            <button type="submit"(click)="submitForm()" class="btn create-ac-btn">Save</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,7 @@
+<span *ngIf="text.length <= wordLimit">{{text}}</span>
+<span *ngIf="text.length > wordLimit && !Showmore">
+    {{text.substring(0,wordLimit)}}...<span class="font-weight-bold text-primary hand" (click)="Showmore = true">show more</span>
+</span>
+<span *ngIf="text.length > wordLimit && Showmore">
+    {{text}} <span  class="font-weight-bold text-primary hand"(click)="Showmore = false"> show less</span>
+</span> 

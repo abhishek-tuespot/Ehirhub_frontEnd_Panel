@@ -1,0 +1,53 @@
+<app-company-header></app-company-header>
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Our Affordable Pricing Plans</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Our Affordable Pricing Plans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pricing-area pb-75">
+    <div class="container">
+        <div class="section-title">
+            <h2></h2>
+        </div>
+
+        <div class="row justify-content-center align-items-end">
+            <div class="col-lg-4 col-md-6" *ngFor="let data of packageData">
+                <div class="single-pricing-table">
+                    <div class="pricing-icon">
+                        <i class="flaticon-spaceship"></i>
+
+                        <div class="back-icon">
+                            <i class="flaticon-spaceship"></i>
+                        </div>
+                    </div>
+
+                    <div class="pricing-header">
+                        <h3>{{data.packageName}}</h3>
+                    </div>
+
+                    <div class="price"><i class="fa fa-inr" aria-hidden="true"></i>{{data.amount}}<span
+                            style="margin-left:15px;font-size:20px">/{{data.validity}}</span></div>
+
+                    <ul class="pricing-features-list">
+                        <li>{{data.noOfJobsPost}} Jobs you can post</li>
+                        <li>{{data.noOfResumeDownload}} Resumes you can download</li>
+                    </ul>
+
+                    <div class="pricing-btn">
+                        
+                            <button class="default-btn" (click)="showData(data.id,companyId)"> Buy <i
+                                    class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                </div>
+            </div>

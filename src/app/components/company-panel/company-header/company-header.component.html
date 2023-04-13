@@ -1,0 +1,57 @@
+7<div class="navbar-area fixed-top">
+
+    <div class="mobile-nav">
+        <a routerLink="/" class="logo" style="color: #4bcc5a;max-width: 400%;">
+            <img class="image" src="assets/images1/Logo PNG.png" height="800" width="200">
+        </a>
+    </div>
+
+    <div class="main-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" routerLink="/" style="color: #4bcc5a;max-width: 400%;">
+                    <img class="image" src="assets/images1/Logo PNG.png" height="500" width="500">
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a routerLink="/companyHome" class="nav-link dropdown-toggle">Home</a>
+                        </li>
+
+                        <li class="nav-item"><a routerLink="/postJob" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">Post Job</a></li>
+
+                        <li class="nav-item">
+                            <a routerLink="/postedJobs" class="nav-link dropdown-toggle">Posted Jobs</a>
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item"><a routerLink="/boughtPackages" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">Bought Packages</a></li>
+
+
+                        <li class="nav-item"><a routerLink="/companyContactUs" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">Contact us</a></li>
+                    </ul>
+
+                    <div class="common-btn">
+                        <div>
+                            <div class="dropdown">
+                                <span><img src="assets/userPic.png" width="50px" height="60px"
+                                        style="border-radius: 50%;" /></span>
+                                <div class="dropdown-content">
+                                    <p>{{username}}</p>
+                                    <hr>
+                                    <a class="login-btn" (click)="logout()"><i class="icofont-logout"></i> Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
